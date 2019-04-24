@@ -10,13 +10,13 @@ class App extends Component {
       <div className="App">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-4">
+            <div className="col-12 col-md-4">
               <Form />
             </div>
-            <div className="col-4">
+            <div className="col-12 col-md-4">
               <UserList />
             </div>
-            <div className="col-4">
+            <div className="col-12 col-md-4">
               <DetailView />
             </div>
           </div>
