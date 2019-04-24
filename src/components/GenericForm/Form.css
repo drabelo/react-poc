@@ -1,0 +1,8 @@
+.no-padding {
+  padding: 0px;
+}
+
+.loading-btn {
+  display: inline-block;
+  padding-left: 10px;
+}

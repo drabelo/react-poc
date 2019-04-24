@@ -1,0 +1,38 @@
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## React Project for Global Banking
+
+# Architecture
+
+This is a simple react application that uses the ` https://reqres.in/` api to test the POST (creation) and PUT (update) calls. I used React for this project because of it's modularity and vast ecosystem. My architecture design choice was to make everything into a component to reduce code duplication, and allow for easier testing. I used Redux to to hold the state of the application, and the `redux-persist` library to keep the redux store in local storage to mock save it. 
+
+
+# Trade Offs
+
+If I had more time to work on this project there is a couple of things I would do. 
+1 ) Add validations to the form. Currently setting the input type helps with this but I could go further.
+2 ) Enhance the tests to bring code coverage to 90% +
+3 ) Enhance the UI, in a way thats more logical. I chose the 3 column setup because of time, but would prefer a 3 page app, with distinct pages for the different actions. (creating, viewing, and updating)
+
+# How to run
+
+To run
+`yarn start or npm start`
+
+To test
+`yarn test or npm test`
+
+To build
+`yarn build or npm run build`
+
+To lint check
+`yarn lint or npm run lint`
+
+# How to run
+
+
+
+(Ideally) Link to to the hosted application
+
+
+(Optional) Link to other code you’re particularly proud of
