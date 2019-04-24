@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
 import DetailView from './DetailView';
 
+beforeEach(() => {
+  fetch.resetMocks();
+  fetch.mockResponseOnce(JSON.stringify({ test: '123' }));
+})
+
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<DetailView />, div);
@@ -18,7 +23,6 @@ it('does not allow saving without the required fields', () => {
 });
 
 it('allows saving with the required fields', () => {
-  fetch.mockResponseOnce(JSON.stringify({ test: '123' }));
   const wrapper = mount(<DetailView updateUser={() => {}} />);
   global.alert = jest.fn();
   global.scrollTo = jest.fn();
@@ -32,4 +36,5 @@ it('allows saving with the required fields', () => {
   });
   wrapper.instance().handleSubmit({ preventDefault: () => {} });
   expect(global.alert).not.toBeCalled();
+  expect(fetch.mock.calls.length).toEqual(1)
 });

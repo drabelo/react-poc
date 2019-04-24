@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from '../GenericForm/Form';
+import urls from '../../constants/urls';
 
 class AddUserForm extends Component {
   state = {
@@ -35,7 +36,7 @@ class AddUserForm extends Component {
     }
 
     this.setState({ loading: true });
-    fetch('https://reqres.in/api/users', {
+    fetch(urls.reqres, {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: {
@@ -47,6 +48,11 @@ class AddUserForm extends Component {
         this.props.addUser(result);
         this.setState({ loading: false });
         window.scrollTo(0, 0);
+      })
+      .catch((error) => {
+        alert(
+          `FAILED SUBMITTING: ${error.message}`
+        );
       });
   };
 
@@ -61,7 +67,7 @@ class AddUserForm extends Component {
   render() {
     return (
       <div>
-        <h2>Enter User information</h2>
+        <h2>Add User</h2>
         <Form
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
@@ -78,6 +84,7 @@ class AddUserForm extends Component {
           degree={this.state.degree}
           loading={this.state.loading}
           completedDegree={this.state.completedDegree}
+          submitText={"Add"}
         />
       </div>
     );

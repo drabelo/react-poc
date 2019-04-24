@@ -4,10 +4,9 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web and AsyncStorage for react-native
+import storage from 'redux-persist/lib/storage';
 import App from './components/RootApp/App';
 import userRedux from './reducers/index';
-import './index.css';
 
 const persistConfig = {
   key: 'root',

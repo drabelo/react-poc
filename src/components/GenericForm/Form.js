@@ -59,11 +59,12 @@ class Form extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Date of Birth:</label>
+            <label htmlFor="dob">Date of Birth:</label>
             <input
               placeholder="Date of Birth"
               type="date"
               name="dob"
+              id="dob"
               className="form-control form-control-sm"
               value={this.props.dob}
               onChange={this.props.handleChange}
@@ -107,10 +108,11 @@ class Form extends Component {
             </div>
           </div>
           <div className="form-group">
-            <label htmlFor="exampleFormControlSelect1">Education</label>
+            <label htmlFor="education">Education</label>
             <select
               className="form-control form-control-sm"
               name="education"
+              id="education"
               value={this.props.education}
               onChange={this.props.handleChange}
             >
@@ -148,7 +150,7 @@ class Form extends Component {
             </div>
           )}
           <button type="submit" id="submit-btn" className="btn btn-primary">
-            Submit
+            {this.props.submitText}
           </button>
           {this.props.loading && (
             <ReactLoading
@@ -179,6 +181,7 @@ Form.propTypes = {
   heightInches: PropTypes.string,
   education: PropTypes.string,
   degree: PropTypes.string,
+  submitText: PropTypes.string,
   id: PropTypes.number,
   completedDegree: PropTypes.bool,
 };
