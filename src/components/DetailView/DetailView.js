@@ -71,7 +71,7 @@ class DetailView extends Component {
       <div>
         {this.props.user && (
           <div>
-            <h1>Modify User information</h1>
+            <h2>Modify User information</h2>
             <Form
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}

@@ -21,7 +21,7 @@ class UserList extends Component {
       <div>
         {users && (
           <div>
-            <h1>Users Table</h1>
+            <h2>Users Table</h2>
             <div className="list-group">{users}</div>
           </div>
         )}
